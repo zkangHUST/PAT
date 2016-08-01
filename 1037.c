@@ -13,27 +13,21 @@ int main()
                 scanf("%d",&value[i]);
 	qsort(coupons,m,sizeof(int),comp);
 	qsort(value,n,sizeof(int),comp);
-	int *p=&coupons[0];
-	int *q=&value[0];
+	int p=m-1,q=n-1;
 	long long sum = 0;
-	long long tmp = 0;
-	while((p<=&coupons[m-1])&&(q<=&value[n-1]))
+	while(coupons[p]>0&&value[q]>0)
 	{
-		if((tmp=(*p)*(*q))>0)
-		{
-			sum = sum +tmp;
-			p++;
-			q++;
-		}
-		else if(*p<0)
-		{
-			q++;
-		}
-		else if(*q<0)
-		{
-			p++;
-		}
+		sum += coupons[p]*value[q];
+		p--;
+		q--;
 	}
+	p=0,q=0;
+	while(coupons[p]<0&&value[q]<0)
+	{
+		sum += coupons[p]*value[q];
+		p++;
+		q++;
+	}	
 	printf("%d",sum);
 	return 0;
 }
@@ -41,8 +35,5 @@ int comp(void* a,void* b)
 {
 	int* m=(int*)a;
 	int* n=(int*)b;
-	if(*m<0&&*n<0)
-		return *m -*n;
-	else
-		return *n - *m;
+	return *m -*n;
 }
