@@ -70,7 +70,6 @@ int PeekMedian(stack s)
 {
 	qsort(s.data,s.top,sizeof(int),comp);
 	//int i=0,key = s.data[0];
-	//for(i=0;i<s.top;i++)
 	//{
 	//	if()	
 	//}
