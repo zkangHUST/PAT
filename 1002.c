@@ -2,7 +2,6 @@
 #include<math.h>
 #define EPSION 0.1
 double a[1001]={0};
-//int b[11]={0};
 int main()
 {
 	int k;
@@ -25,7 +24,7 @@ int main()
 	for(i=1000;i>=0;i--)
 	{
 		if(fabs(a[i])>=EPSION)
-			count++;//	printf("%.1lf %d ",a[i],i);
+			count++;
 	}
 	if(count == 0)
 	{
