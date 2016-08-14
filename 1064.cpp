@@ -93,7 +93,6 @@ void InOrderVisit(node* s)
         {
             InOrderVisit(s->left);
             printf("%d ",s->data);
-            //s->data = num[(*i)++];
 	    InOrderVisit(s->right);
         }  
 }
