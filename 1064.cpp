@@ -30,7 +30,13 @@ int main()
 	qsort(&num[1],n,sizeof(int),comp);
 	creat(a,n);
 	InOrderSet(&a[1],num,&m);
-	levelTravel(&a[1]);
+	//levelTravel(&a[1]);
+	for(i=1;i<=n;i++)	//没有必要层序遍历，按数组下标打印即可
+	{
+		cout<<a[i].data;
+		if(i<n)
+			cout<<' ';
+	}
 	return 0;
 }
 node* creat(node a[],int n)
